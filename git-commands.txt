@@ -1,0 +1,4 @@
+git status
+git add .
+git commit -m "escreva algo"
+git push bth-frontend master
