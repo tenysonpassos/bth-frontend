@@ -9,7 +9,7 @@
 
 body{
     font: 400 14px Roboto, sans-serif;
-    background: #f0f0f5;
+    background: #f0f0f5 !important;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -41,11 +41,29 @@ form textarea{
     line-height: 24px;
 }
 
+.logo{
+    max-width: 250px;
+}
+
+.logo > img{
+    width: 100%;
+}
+
+@media(max-width: 480px){
+    .logo{
+        width: 160px;
+        padding-top: 40px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 .button{
     width: 100%;
+    bottom: 0;
     height: 60px;
     background: #e02041;
-    border: 0;
+    border: none;
     border-radius: 8px;
     color: #fff;
     font-weight: 700;
@@ -60,6 +78,11 @@ form textarea{
 
 .button:hover{
     filter: brightness(90%);
+    text-decoration: none;
+}
+
+.button:visited{
+    color: #fff;
 }
 
 .back-link{
@@ -79,4 +102,13 @@ form textarea{
 
 .back-link svg{
     margin-right: 8px;
+}
+
+.footer-bth{
+    text-align: center;
+    margin: 60px 0;
+}
+
+.input-group{
+    justify-content: space-between;
 }

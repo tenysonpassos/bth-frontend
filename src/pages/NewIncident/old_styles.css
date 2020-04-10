@@ -1,0 +1,47 @@
+.new-incident-container{
+    width: 100%;
+    max-width: 1120px;
+    padding: 0 15px;
+    margin: 32px auto;
+    display: flex;
+    align-items: center;
+}
+
+.new-incident-container  section{
+    width: 100%;
+    max-width: 380px;
+}
+
+.new-incident-container  section h1{
+    margin: 32px 0 20px;
+    font-size: 1.2rem;
+}
+
+.new-incident-container section p{
+    font-size: 0.9rem;
+}
+
+.new-incident-container form{
+    width: 100%;
+    max-width: 450px;
+}
+
+.new-incident-container form input,
+.new-incident-container form textarea{
+    margin-top: 8px;
+}
+
+@media(min-width: 720px){
+    .new-incident-container {
+        padding: 96px;
+    }
+    .new-incident-container > .container{
+        width: 100%;
+        padding: 96px;
+        background: #f0f0f5;
+        box-shadow: 0 0 100px rgba(0,0,0,.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+    }
+}
