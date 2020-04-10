@@ -32,11 +32,11 @@
 }
 
 [placeholder=Cidade]{
-    width: 76%;
+    width: 72%;
 }
 
 [placeholder=UF]{
-    width: 20%;
+    width: 24%;
 }
 
 @media(min-width: 720px){
