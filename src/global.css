@@ -112,3 +112,7 @@ form textarea{
 .input-group{
     justify-content: space-between;
 }
+
+.toast{
+    margin-bottom: 20px;
+}

@@ -7,7 +7,7 @@ import Footer from '../../components/footer';
 import api from '../../services/api';
 
 import './styles.css';
-import { Image, Container, Row, Col} from 'react-bootstrap';
+import { Image, Toast, Button, Container, Row, Col} from 'react-bootstrap';
 
 import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
@@ -15,6 +15,7 @@ import heroesImg from '../../assets/heroes.png';
 export default function Logon() {
     const [id, setId] = useState('');
     const history = useHistory();
+    let [show, setShow] = useState();
 
     async function handleLogin(e){
         e.preventDefault();
@@ -27,10 +28,28 @@ export default function Logon() {
 
             history.push('/profile');
         } catch(err){
-            alert('Falha no login, tente novamente.');
+            //alert('Falha no login, tente novamente.');
+            setShow(true);
         }
     }
-
+    
+    function Alert() {        
+        if(show){
+            return (
+                <Row>
+                  <Col sm={12}>
+                    <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                      <Toast.Header>
+                        <strong className="mr-auto">Algo não está certo</strong>
+                      </Toast.Header>
+                      <Toast.Body>Falha no login, tente novamente.</Toast.Body>
+                    </Toast>
+                  </Col>
+                </Row>
+              );
+        }
+        return '';
+      }
 
     return(
         <div className="logon-container">
@@ -41,10 +60,9 @@ export default function Logon() {
                             <div className="logo">
                                 <Image src={logoImg} alt="Be The Hero"/>
                             </div>
-
                             <form onSubmit={handleLogin} >
                                 <h1>Faça seu logon</h1>
-
+                                <Alert />
                                 <input
                                     placeholder="Sua ID"
                                     value={id}
